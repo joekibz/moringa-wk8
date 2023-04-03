@@ -2,6 +2,7 @@
 
 
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 <h3>Tuesday Project - Data pipelines with Redis</h3>
 Best practises used during the implementation
 
@@ -26,3 +27,5 @@ Ensure that the ETL pipeline is secure.
 This involves securing the data store, encrypting data in transit and at rest, and ensuring that only authorized users have access to the pipeline.
 
 Every provider has its strengths and weaknesses, so evaulate each one carefully.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
