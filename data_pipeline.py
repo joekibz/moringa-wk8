@@ -40,7 +40,7 @@ default_args = {
 # In[91]:
 
 
-dag = DAG('data_pipeline', default_args=default_args, schedule_interval='@daily')
+dag = DAG('data_pipeline', default_args=default_args, schedule_interval='*/1 * * * *')
 
 
 # In[92]:
@@ -52,12 +52,16 @@ def extract_data(**kwargs):
     Function reads csv files on local disk | converts the from dataframe to json containing dictionary | returns the data in json format
     """
     
+    json_cust = None
+    json_order = None
+    json_pay = None
+    
     try:
         # extract data from CSV files
         # load the CSV data into Pandas dataframes for later transformation
-        df_cust_data=pd.read_csv('/home/customer_data.csv')
-        df_order_data=pd.read_csv('/home/order_data.csv')
-        df_pay_data=pd.read_csv('/home/payment_data.csv')
+        df_cust_data=pd.read_csv("customer_data.csv")
+        df_order_data=pd.read_csv("order_data.csv")
+        df_pay_data=pd.read_csv("payment_data.csv")
         
         #convert df to dictionary
         dict_cust = df_cust_data.to_dict()
@@ -70,7 +74,7 @@ def extract_data(**kwargs):
         json_pay = json.dumps(dict_pay)
     
     except Exception as e:
-        err = "Extract() error - "+e
+        err = "Extract() error - "+ str(e)
         logging.debug(err)
     
     
@@ -84,6 +88,8 @@ def transform_data(**kwargs):
     """
     Function transforms data | merges dataframes | drops unneeded columns | returns a json string containing dictionary of values
     """
+    
+    json_transform=None
     
     try:
         jfc,jfo,jfp = kwargs['ti'].xcom_pull(task_ids='extract_data')
@@ -136,7 +142,7 @@ def transform_data(**kwargs):
         json_transform = json.dumps(dict_transform)
         
     except Exception as e:
-        err = "Transform() error - "+e
+        err = "Transform() error - "+ str(e)
         logging.debug(err)
 
     return json_transform
@@ -180,7 +186,7 @@ def load_data(**kwargs):
         pg_hook.insert_rows(table='customer_orders', rows=result, target_fields=columns)
     
     except Exception as e:
-        err = "Load() error - "+e
+        err = "Load() error - "+ str(e)
         logging.debug(err)
     
 
