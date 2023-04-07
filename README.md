@@ -1,7 +1,7 @@
 # moringa-wk8 -- Data pipelines with Airflow | Redis | Cassandra | Neo4j
 
 
-<h3>Monday Project - Data pipelines with Airflow</h3>
+<h3>Monday Project - Data pipelines with Airflow</h3> [data_pipeline.py]
 Best practises used during the implementation
 
 <br>1- <b>Naming convention</b>:
@@ -25,7 +25,7 @@ Notes on my DAG environment
 <br>-Goto airflow UI on a browser window find the DAG on list, 'unpause' it and trigger it to run the tasks
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-<h3>Tuesday Project - Data pipelines with Redis</h3>
+<h3>Tuesday Project - Data pipelines with Redis</h3> [redis2.py]
 Best practises used during the implementation
 
 <br>1- <b>Documenting the pipeline</b>: 
