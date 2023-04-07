@@ -1,6 +1,28 @@
 # moringa-wk8 -- Data pipelines with Airflow | Redis | Cassandra | Neo4j
 
 
+<h3>Monday Project - Data pipelines with Airflow</h3>
+Best practises used during the implementation
+
+<br>1- <b>Naming convention</b>:
+DAG and task names clearly describe what the workflow and tasks are meant to do
+<br>2- <b>Running the latest airflow version on docker desktop</b>:
+Am using the latest version of Airflow to take advantage of the newest features and bug fixes.
+<br>3- <b>Logging and Monitoring</b>: 
+Am using Airflow UI's built-in logging and monitoring features to monitor DAGs and tasks for errors and performance issues. 
+
+Recommendations for deployment and running the pipeline with a cloud-based provider
+
+1- <b>Check the reputation and track record of the cloud provider</b>: Check the reputation and track record of the cloud provider. Look at factors such as the reliability and availability of the services, the level of customer satisfaction, and the level of innovation provided.
+2- <b>Evaluate the offerings of different cloud providers</b>: Look at factors such as the availability of services, the level of security provided, the level of support provided, and the pricing.
+3- <b>Consider the level of vendor lock-in</b>: Consider the level of vendor lock-in with the cloud provider. Look at factors such as the level of portability of applications and data, and the ease of switching to a different cloud provider if necessary.
+
+Notes on my DAG environment
+
+<br>-On docker desktop run container for postgres db
+<br>-On docker desktop run container stack for airflow - 7 containers
+<br>-Upload .py file to directory $AIRFLOW_HOME on the web-server container 
+<br>-Goto airflow UI on a browser window find the DAG on list, 'unpause' it and trigger it to run the tasks
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 <h3>Tuesday Project - Data pipelines with Redis</h3>
