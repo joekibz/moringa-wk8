@@ -55,7 +55,7 @@ Every provider has its strengths and weaknesses, so evaulate each one carefully.
 
 <b>Neo4j data schema:</b>
 <br>The customer_data node schema is as follows:
-customer_id | INTEGER,
+<br>customer_id | INTEGER,
 <br>subscription_id | INTEGER,
 <br>service_id | STRING,
 <br>start_date | STRING,
