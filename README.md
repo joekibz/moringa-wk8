@@ -54,9 +54,8 @@ Every provider has its strengths and weaknesses, so evaulate each one carefully.
 <h3>Thursday Project - Data pipelines with Neo4j</h3> [Project - Neo4j.py]
 
 <b>Neo4j data schema:</b>
-The customer_data node schema is as follows:
-
-<br>customer_id | INTEGER,
+<br>The customer_data node schema is as follows:
+customer_id | INTEGER,
 <br>subscription_id | INTEGER,
 <br>service_id | STRING,
 <br>start_date | STRING,
@@ -74,7 +73,7 @@ The customer_data node schema is as follows:
 <br>A database 'db_pipeline' was created.
 <br>A table 'telecom_data' was created in the database, below the schema 
 
-<br>customer_id | INTEGER,
+customer_id | INTEGER,
 <br>subscription_id | INTEGER,
 <br>service_id | VARCHAR,
 <br>start_date | DATE,
