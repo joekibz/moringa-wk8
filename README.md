@@ -51,3 +51,39 @@ This involves securing the data store, encrypting data in transit and at rest, a
 Every provider has its strengths and weaknesses, so evaulate each one carefully.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
+Thursday Project - Data pipelines with Neo4j [Project - Neo4j.py]
+
+Neo4j data schema:
+The customer_data node schema is as follows:
+
+customer_id | INTEGER,
+subscription_id | INTEGER,
+service_id | STRING,
+start_date | STRING,
+end_date | STRING,
+date_of_birth | STRING,
+subscription_price | INTEGER
+
+Transformations done:
+-Start date and end date columns were converted from 'object' to 'datetime' datatype
+-Date of birth column was dropped
+-Null rows were dropped
+
+Postgres data schema:
+A postgres instance was deployed on localhost running docker desktop
+A database 'db_pipeline' was created.
+A table 'telecom_data' was created in the database, below the schema 
+
+customer_id | INTEGER,
+subscription_id | INTEGER,
+service_id | VARCHAR,
+start_date | DATE,
+end_date | DATE,
+price | FLOAT
+
+Steps to setup the data pipeline:
+1-At neo4j cloud, create an instance. Import telecom user data into customer_data node using the import tools on aura portal
+2-On local machine, deploy a postgres db instance on docker desktop
+3-Update the .py file with the login credentials for the neo4j source database and the destination postgres database
+4-Run the .py file to extract from neo4j >> transform df >> load in postgres 
+
